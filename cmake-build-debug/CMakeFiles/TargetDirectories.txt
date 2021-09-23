@@ -1,0 +1,3 @@
+D:/CLionProjects/PSODerevianko2Blocks/cmake-build-debug/CMakeFiles/PSODerevianko2Blocks.dir
+D:/CLionProjects/PSODerevianko2Blocks/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CLionProjects/PSODerevianko2Blocks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
