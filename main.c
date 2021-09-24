@@ -3257,7 +3257,7 @@ int *particleSwarmOptimization(int size, int count, int N, int maxIter, int mode
         int tempSbox2[size];
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < size;) {
-                if (i < 2){
+                if (i < 3){
                     Vel[i][j] = ceil(weightCur * Vel[i][j] + c1 * r1 * (gBest[j] - population[i][j] +
                                                                         c2 * r2 * (gBest[j] - population[i][j])));
                     Vel[i][j] = 0;
@@ -3271,7 +3271,7 @@ int *particleSwarmOptimization(int size, int count, int N, int maxIter, int mode
                 }
                 //printf("Vel[%d][%d] = %d ", i,j,Vel[i][j]);
                 int X;
-                if (i < 2) {
+                if (i < 3) {
                     X = myModulusDec((aesSbox[j] + Vel[i][j]), 256);
                 }
                 else {
@@ -3304,7 +3304,7 @@ int *particleSwarmOptimization(int size, int count, int N, int maxIter, int mode
                     j++;
                 }
             }
-            if (i < 2) {
+            if (i < 3) {
                 int LAT = LATMax(tempSbox, size, count);
                 int NL = raiseToPower(2, count - 1) - LAT;
                 if (NL > 98) {
@@ -3320,7 +3320,7 @@ int *particleSwarmOptimization(int size, int count, int N, int maxIter, int mode
                             tempSbox[coeff] = tempSbox[coeff2];
                             tempSbox[coeff2] = temp;
                             }
-                            if (i == 1){
+                            if (i > 0){
                             int coeff = (rand()+rand()) % 50;
                             printf("coeff1 %d", coeff);
                             int coeff2 = (rand()+rand()) % 256;
